@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h1>Jogo da Velha</h1>
+
+{% if vencedor == "Empate" %}
+    <p class="mensagem">Deu velha! Ninguém venceu.</p>
+{% elif vencedor %}
+    <p class="mensagem">Vitória de {{ vencedor }}!</p>
+{% else %}
+    <p class="mensagem">Vez do jogador {{ jogador_atual }}</p>
+{% endif %}
+
+<div class="tabuleiro">
+    {% for valor in tabuleiro %}
+        <a class="celula {{ valor }}" href="{{ url_for('jogar', posicao=loop.index0) }}">
+            {{ valor }}
+        </a>
+    {% endfor %}    
+
+</div>
+
+<a class="botao" href="{{ url_for('reiniciar') }}">Novo jogo</a>
+
+<h2>Placar</h2>
+<div class="placar">
+    <span>X: {{ placar["X"] }}</span>
+    <span>O: {{ placar["O"] }}</span>
+    <span>Empates: {{ placar["Empate"] }}</span>
+</div>
+
+{% endblock %}

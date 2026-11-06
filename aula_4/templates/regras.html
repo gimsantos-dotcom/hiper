@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h1>Regras</h1>
+<ul>
+    <li>O tabuleiro tem 9 casas, organizadas em uma grade 3x3.</li>
+    <li>Os jogadores se revezam marcando X e O, começando pelo X.</li>
+    <li>Vence quem completar uma linha, coluna ou diagonal com o mesmo símbolo.</li>
+    <li>Se todas as casas forem preenchidas sem um vencedor, o jogo termina empatado.</li>
+</ul>
+<a class="botao" href="{{ url_for('index') }}">Voltar para o jogo</a>
+{% endblock %}
