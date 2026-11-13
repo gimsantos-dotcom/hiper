@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h1>Regras</h1>
+<ul>
+    <li>O tabuleiro tem 100 casas, organizadas em uma grade 10x10.</li>
+    <li>Cada clique em uma seta move a cobrinha uma casa naquela direção.</li>
+    <li>Ao comer a comida vermelha, a cobrinha cresce e você ganha 1 ponto.</li>
+    <li>O jogo termina se a cobrinha bater na parede ou nela mesma.</li>
+</ul>
+<a class="botao" href="{{ url_for('index') }}">Voltar para o jogo</a>
+{% endblock %}
